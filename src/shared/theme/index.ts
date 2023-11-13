@@ -1,2 +1,2 @@
-export * from "./reset";
-export * from "./theme";
+export * from "./reset.ts";
+export * from "./theme.ts";

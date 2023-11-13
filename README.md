@@ -1,27 +1,69 @@
-# React + TypeScript + Vite
+## Инициализация
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+После скачивания репозитория установите все зависимости с помощью команды:
 
-Currently, two official plugins are available:
+- npm install
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Основные команы проекта:
 
-## Expanding the ESLint configuration
+- npm run dev - 'запуск проекта'
+- npm run build - 'билд проекта'
+- npm run lint - 'линтер'
+- npm run test - 'запуск тестов'
+- npm run preview - 'после build можем развернуть именно сбилженный проект (бывают отличия)'
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Архитектура
 
-- Configure the top-level `parserOptions` property like this:
+- Feature-Sliced Design
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+Плюсы:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- позволяет декомпозировать проект
+- отделить бизнес логику
+- четкая иерархия
+
+Минусы:
+
+- дополнительные затраты по времени
+- зачастую для простых ранее решений приходится придумывать более сложные новые
+- чуть более высокий порог вхождения
+
+## СТЭК
+
+- JavaScript, TypeScript
+- React
+- Redux Toolkit
+- React Router
+- Styled Components
+
+## Билд и тесты
+
+- Vite
+- ESLint, Prettier
+- Vitest, React Testing Library
+
+## Хорошие практики написания кода
+
+- Наследование интерфейсов и компонентов
+- Вынесение логики отдельно от визуала
+- Следование архитектуре и подчиненности слоёв
+- Тестирование
+
+## Масштабируемость достигалась с помощью:
+
+- FSD
+- Вынесение логики
+
+## Надежность достигалась с помощью:
+
+- ESLint
+- TypeScript
+- Тестирование
+
+## Время
+
+~ 12ч
+
+## P.S.
+
+- Было интересно по смотреть какие-то новые технологии на чем сейчас стартуют проекты, попробовал vitest, по похож на jest, но есть нюансы, + в случае с Vite, vitest гораздо быстрее отрабатывает. Так же по вспоминал Styled Components - в актуальном стеке не используется. Появилось много идей что еще можно попробовать. Было интересно)
