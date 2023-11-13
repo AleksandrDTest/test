@@ -1,14 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-
-type TCurrency = {
-  id: string;
-  name: string;
-  min_size: number;
-};
-
-interface ICurrencyData {
-  data: TCurrency[];
-}
+import { ICurrencyData } from "../model";
 
 export const coinbaseApi = createApi({
   reducerPath: "coinbaseApi",
@@ -19,7 +10,7 @@ export const coinbaseApi = createApi({
     },
   }),
   endpoints: (builder) => ({
-    getCurrencies: builder.query<ICurrencyData[], void>({
+    getCurrencies: builder.query<ICurrencyData, void>({
       query: () => "/v2/currencies",
     }),
   }),

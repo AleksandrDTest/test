@@ -3,9 +3,11 @@ import {
   configureStore,
   PreloadedState,
 } from "@reduxjs/toolkit";
-import { coinbaseApi } from "../shared/api/coinbaseApi";
+import { coinbaseApi } from "../api/coinbaseApi";
+import { formCurrentCurensy } from "../slice";
 
 export const rootReducer = combineReducers({
+  formCurrentCurensy,
   [coinbaseApi.reducerPath]: coinbaseApi.reducer,
 });
 
